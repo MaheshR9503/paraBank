@@ -1,14 +1,16 @@
 package com.Tests;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.Base.Browser;
 import com.Base.InformationPageData;
-import com.Base.LoginPageData;
+
 import com.Webpages.AddToCart;
 import com.Webpages.Information;
 import com.Webpages.LoginPage;
@@ -22,28 +24,29 @@ public class InformationPageTest extends Browser {
 	AddToCart cartObj;
 	Information infoObj;
 	
+	@Parameters({"browser"})
 	@BeforeClass
-	public void openBrowser()
+	public void openBrowser(String browser)
 	{
-		driver=opneBrowser();
+		driver=opneBrowser(browser);
 		loginObj=new LoginPage(driver);
 		
 	}
 	
 	
-	@Test(priority = 1, dataProvider = "getData1", dataProviderClass = LoginPageData.class)
-	public void selectItems(String un, String pswd)
+	@Test(priority = 1)
+	public void selectItems()
 	{
-		 productObj = loginObj.selectproductobject(un, pswd);
+		 productObj = loginObj.selectproductobject(pr.getProperty("username"),pr.getProperty("password"));
 		 cartObj = productObj.addToCartObj();
 		 infoObj = cartObj.inormationObj();
 		
 	}
 	
-	@Test(priority = 2,dataProvider = "getData",dataProviderClass = InformationPageData.class)
-	public void information(String fname,String lname,String post)
+	@Test(priority = 2 )
+	public void information()
 	{
-		infoObj.overViewObj(fname, lname, post);
+		infoObj.overViewObj();
 	}
 	
 	

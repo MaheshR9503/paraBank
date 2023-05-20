@@ -17,7 +17,7 @@ public class LoginPage {
 	@FindBy(id = "user-name")						private WebElement username;
 	@FindBy(id = "password")						private WebElement password;
 	@FindBy(id = "login-button")					private WebElement login;
-	@FindBy(css = "div[class='login_logo']")		private WebElement logo;
+	@FindBy(css = "div[class='bot_column']")		private WebElement logo;
 	
 	
 	

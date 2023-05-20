@@ -29,7 +29,9 @@ public class SelectProduct {
 	@FindBy(xpath = "//div[@class='inventory_list']/child ::div[2]/child ::div[2]/child ::div[2]/child ::button")
 	WebElement bikeLight;
 	
-	@FindBy(css = "select[class='product_sort_container']")			WebElement dropDown;
+	@FindBy(css = "select[class='product_sort_container']")			
+	WebElement dropDown;
+	
 	@FindBy(xpath = "//div[@class='inventory_list']/child ::div[4]/child ::div[2]/child ::div[2]/child ::button")
 	WebElement redTshirt;
 	
@@ -40,8 +42,14 @@ public class SelectProduct {
 	public AddToCart addToCartObj()
 	{
 		bikeLight.click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Select s=new Select(dropDown);
-		s.selectByVisibleText("Price (low to high)");
+		s.selectByIndex(2);
 		redTshirt.click();
 		cart.click();
 		return new AddToCart(driver);

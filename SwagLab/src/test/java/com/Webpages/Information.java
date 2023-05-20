@@ -22,11 +22,11 @@ public class Information {
 	
 	
 	
-	public OverViewPage overViewObj(String a,String b,String c)
+	public OverViewPage overViewObj()
 	{
-		firstname.sendKeys(a);
-		postcode.sendKeys(c);
-		lastName.sendKeys(b);
+//		firstname.sendKeys(a);
+//		postcode.sendKeys(c);
+//		lastName.sendKeys(b);
 		click.click();
 		return new OverViewPage(driver);
 	}

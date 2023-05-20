@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.Base.Browser;
@@ -22,10 +23,11 @@ public class OverViewPageTest extends Browser{
 	Information infoObj;
 	OverViewPage overVieObj;
 	
+	@Parameters({"browser"})
 	@BeforeClass
-	public void openBrowser()
+	public void openBrowser(String browser)
 	{
-		driver=opneBrowser();
+		driver=opneBrowser(browser);
 		loginObj=new LoginPage(driver);
 		productObj=new SelectProduct(driver);
 		cartObj=new AddToCart(driver);

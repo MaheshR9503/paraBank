@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
+  <test thread-count="5" name="Test1(failed)" parallel="classes">
+    <parameter name="browser" value="Edge"/>
+    <classes>
+      <class name="paraBank.TestClasses.TC3_VerifyAccount_Test">
+        <methods>
+          <include name="accountVerification"/>
+          <include name="initBrowsers"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- paraBank.TestClasses.TC3_VerifyAccount_Test -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test thread-count="5" name="Test2(failed)" parallel="classes">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="paraBank.TestClasses.TC3_VerifyAccount_Test">
+        <methods>
+          <include name="accountVerification"/>
+          <include name="initBrowsers"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- paraBank.TestClasses.TC3_VerifyAccount_Test -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+  <test thread-count="5" name="Test3(failed)" parallel="classes">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="paraBank.TestClasses.TC3_VerifyAccount_Test">
+        <methods>
+          <include name="tc1ANdtc2"/>
+          <include name="accountVerification"/>
+          <include name="initBrowsers"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- paraBank.TestClasses.TC3_VerifyAccount_Test -->
+      <class name="paraBank.TestClasses.TC1_LoginPage_Test">
+        <methods>
+          <include name="initBrowser"/>
+          <include name="userableTo_login"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- paraBank.TestClasses.TC1_LoginPage_Test -->
+      <class name="paraBank.TestClasses.TC2_CreateAccountPage_Test">
+        <methods>
+          <include name="initBrowsers"/>
+          <include name="createNewAccount"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- paraBank.TestClasses.TC2_CreateAccountPage_Test -->
+      <class name="paraBank.TestClasses.TC0_RegistrationPage_Test">
+        <methods>
+          <include name="registrationPage"/>
+          <include name="initBrowser"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- paraBank.TestClasses.TC0_RegistrationPage_Test -->
+    </classes>
+  </test> <!-- Test3(failed) -->
+</suite> <!-- Failed suite [Suite] -->
